@@ -1,0 +1,360 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&subset=cyrillic,cyrillic-ext');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+    background: transparent;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: #888DA8;
+    height: 100%;
+    position: relative;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #515365;
+}
+
+h1 {
+    font-size: 2.143em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.714em;
+    font-weight: 500;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.card {
+    padding: 15px;
+    border: 1px solid #E6ECF5;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+}
+
+.btn {
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    border-radius: 5px;
+    border: none;
+    height: 42px;
+    padding: 0 35px;
+    text-transform: capitalize;
+    background-color: #7774E7;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out;
+    min-width: 135px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #4D4AE8;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.label {
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    text-align: left;
+    font-size: 0.857em;
+    font-weight: 300;
+    color: #888DA8;
+}
+
+.input {
+    padding: 0 15px;
+    height: 40px;
+    font-size: 1em;
+    border: 1px solid #E6ECF5;
+    border-radius: 2px;
+    min-width: 208px;
+    color: #515365;
+    outline: none;
+    transition: border .2s ease-in-out;
+}
+
+.input::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    color: #E6ECF5;
+}
+
+.input:hover,
+.input:focus {
+    border: 1px solid #7774E7;
+}
+
+#root {
+    min-height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template:
+            "header"
+            "main" calc(100% - 65px);
+}
+
+#header {
+    grid-area: header;
+    height: 65px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.logo {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.st0{fill:#00AAFF;}
+.st1{fill:#97CF26;}
+.st2{fill:#FF6163;}
+.st3{fill:#A169F7;}
+
+.logotype {
+    height: 30px;
+    width: auto;
+    margin-right: 5px;
+}
+
+.favorite-icon-link {
+    width: 20px;
+    fill: #7774E7;
+}
+
+#main {
+    grid-area: main;
+    background-color: #F6F7FB;
+    padding: 15px;
+    text-align: center;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    list-style: none;
+    grid-gap: 15px;
+}
+
+.product {
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    position: relative;
+    align-self: stretch;
+    height: calc(100% - 30px);
+    text-decoration: none;
+    text-align: center;
+}
+
+.product-images {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(136,141,168,0.7);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-to-favorite {
+    border: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 20px;
+    background: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.favorite-icon {
+    width: 20px;
+    fill: rgba(136,141,168,0.8);
+    transition: fill .2s ease-in-out;
+}
+
+.favorite-icon-white {
+    width: 20px;
+    fill: #FFFFFF;
+    transition: fill .2s ease-in-out;
+}
+
+.favorite-icon:hover {
+    fill: #FFFFFF;
+}
+
+.favorite-icon-white:hover {
+    fill: #BD2130;
+}
+
+.product-title {
+    margin: 15px 0 5px 0;
+    text-transform: capitalize;
+}
+
+.product-seller {
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    list-style: none;
+    width: auto;
+}
+
+.star {
+    width: 15px;
+    height: 15px;
+}
+
+.star:not(:last-child) {
+    margin-right: 3px;
+}
+
+.star-icon {
+    width: 15px;
+    height: 15px;
+    fill: #37C936;
+}
+
+.product-price {
+    color: #888DA8;
+    font-weight: 500;
+}
+
+.preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+.preview-info {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    grid-gap: 10px;
+    align-items: start;
+}
+
+.preview-info h2 {
+    text-transform: capitalize;
+}
+
+@media only screen and (min-width: 768px) {
+    body {
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    .card {
+        padding: 30px;
+    }
+
+    .btn {
+        font-weight: 400;
+        padding: 0 40px;
+    }
+
+    .input {
+        padding: 0 30px;
+        min-width: 190px;
+    }
+
+    .input::placeholder {
+        font-weight: 400;
+    }
+
+    #header {
+        padding: 0 30px;
+    }
+
+    #main {
+        padding: 30px;
+    }
+
+    .products {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-gap: 30px;
+    }
+
+    .product {
+        height: calc(100% - 60px);
+    }
+
+    .product-images {
+        top: 40px;
+        left: 40px;
+    }
+
+    .add-to-favorite {
+        top: 40px;
+        right: 40px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .preview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: flex-start;
+        justify-content: flex-start;
+        grid-gap: 30px;
+        padding: 30px;
+    }
+
+    .preview-info {
+        margin-top: 0;
+        grid-gap: 20px;
+    }
+}

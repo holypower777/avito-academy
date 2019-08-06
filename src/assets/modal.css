@@ -1,0 +1,91 @@
+.side-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+    background-color: #7774E7;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.side-btn:hover {
+    background-color: #4D4AE8;
+}
+
+.filter-icon {
+    width: 14px;
+    height: 14px;
+    fill: #FFFFFF;
+}
+
+#side-modal {
+    width: 280px;
+    height: 100vh;
+    background: #FFFFFF;
+    position: fixed;
+    right: -281px;
+    bottom: 0;
+    border-left: 1px solid #E6ECF5;
+    transition: right .2s ease-in-out;
+    display: grid;
+    grid-template:
+            "side-header"
+            "side-main" calc(100% - 65px);
+    z-index: 999;
+}
+
+#side-header {
+    border-bottom: 1px solid #E6ECF5;
+    align-items: center;
+    grid-area: side-header;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#side-main {
+    grid-area: side-main;
+    display: grid;
+    align-content: start;
+    grid-gap: 10px;
+    padding: 15px;
+}
+
+.side-modal-open {
+    right: 0 !important;
+}
+
+.side-close {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.side-close-icon {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    transition: fill .2s ease-in-out;
+}
+
+.side-close-icon:hover {
+    fill: #7774E7;
+}
+
+@media only screen and (min-width: 768px) {
+    .side-btn {
+        bottom: 30px;
+        right: 30px;
+    }
+
+    #side-main {
+        grid-gap: 20px;
+    }
+}
