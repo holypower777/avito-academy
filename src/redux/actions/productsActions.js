@@ -1,16 +1,12 @@
 export const FETCH_PRODUCTS = '[products] fetch products';
 export const FETCH_PRODUCTS_SUCCESS = '[products] fetch products success';
 export const FETCH_PRODUCTS_ERROR = '[products] fetch products error';
+export const FETCH_ONE_PRODUCT = '[products] fetch one product';
+export const FETCH_ONE_PRODUCT_SUCCESS = '[products] fetch one product success';
+export const FETCH_ONE_PRODUCT_ERROR = '[products] fetch one product error';
 export const PROCESS_PRODUCTS = '[products] process products';
-export const FILTER_PRODUCTS = '[products] filter products';
-export const FILTER_PRODUCTS_SUCCESS = '[products] filter products success';
-export const UPDATE_FILTERS = '[products] update filters';
-export const FETCH_ONE = '[products] fetch one product';
-export const FETCH_ONE_SUCCESS = '[products] fetch one product success';
-export const FETCH_ONE_ERROR = '[products] fetch one product error';
-export const SORT_PRODUCTS = '[products] sort products';
-export const SORT_PRODUCTS_SUCCESS = '[products] sort products success';
-
+export const ADD_TO_FAVORITES = '[products] add to favorites';
+export const REMOVE_FROM_FAVORITES = '[products] remove from favorites';
 
 export const fetchProducts = () => ({
     type: FETCH_PRODUCTS
@@ -21,21 +17,17 @@ export const processProducts = (data) => ({
     payload: data
 });
 
-export const filterProducts = () => ({
-    type: FILTER_PRODUCTS
-});
-
-export const updateFilters = (filters) => ({
-    type: UPDATE_FILTERS,
-    payload: filters
-});
-
 export const fetchOneProduct = (id) => ({
-    type: FETCH_ONE,
+    type: FETCH_ONE_PRODUCT,
     payload: id
 });
 
-export const sortProduts = (sortOption) => ({
-    type: SORT_PRODUCTS,
-    payload: sortOption
+export const addToFavorites = (product) => ({
+    type: ADD_TO_FAVORITES,
+    payload: product
+});
+
+export const removeFromFavorites = (id) => ({
+    type: REMOVE_FROM_FAVORITES,
+    payload: id
 });

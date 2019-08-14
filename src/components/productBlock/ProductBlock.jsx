@@ -3,25 +3,25 @@ import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import Rating from "react-rating";
 
-import {addToFavorites, deleteFromFavorites} from "../redux/actions/favoritesActions";
+import {addToFavorites, removeFromFavorites} from "../../redux/actions/productsActions";
 
-import FavoriteIcon from "./icons/FavoriteIcon";
-import FullStarIcon from "./icons/FullStarIcon";
-import StarIcon from "./icons/StarIcon";
+import FavoriteIcon from "../icons/FavoriteIcon";
+import FullStarIcon from "../icons/FullStarIcon";
+import StarIcon from "../icons/StarIcon";
 
-const Product = ({product, favorites, addToFavorites, deleteFromFavorites}) => {
-    const {pictures, id, price, title, relationships: {name, rating}} = product;
-    const favorite = favorites.find((item) => item.id === id);
-    const isFavorite = !!favorite;
+import './productBlock.css';
+
+const ProductBlock = ({product, addToFavorites, removeFromFavorites}) => {
+    const {pictures, id, isFavorite, price, title, relationships: {name, rating}} = product;
 
     const handleClick = (e) => {
         e.preventDefault();
-        isFavorite ? deleteFromFavorites(id) : addToFavorites(product);
+        isFavorite ? removeFromFavorites(id) : addToFavorites(product);
     };
 
     return (
         <li>
-            <Link to={`/product/${id}`} className="card product">
+            <Link to={`/products/${id}`} className="card product">
                 <img src={pictures[0]} alt={title}/>
                 <span className="product-images">{pictures.length}</span>
                 <button className="add-to-favorite" onClick={handleClick}>
@@ -29,7 +29,7 @@ const Product = ({product, favorites, addToFavorites, deleteFromFavorites}) => {
                 </button>
                 <h3 className="product-title">{title}</h3>
                 <div className="product-seller">
-                    <span style={{color: '#888DA8'}}>{name}</span>
+                    <span>{name}</span>
                     <Rating
                         initialRating={rating}
                         readonly
@@ -44,11 +44,7 @@ const Product = ({product, favorites, addToFavorites, deleteFromFavorites}) => {
     );
 };
 
-const mapStateToProps = (state) => ({
-    favorites: state.favorites.favorites
-});
-
 export default connect(
-    mapStateToProps,
-    {addToFavorites, deleteFromFavorites}
-)(Product);
+    null,
+    {addToFavorites, removeFromFavorites}
+)(ProductBlock);

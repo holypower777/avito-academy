@@ -1,16 +1,18 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import Home from "./Home";
-import Favorites from "./Favorites";
-import ProductPreview from "./ProductPreview";
+import Header from "./generic/Header";
+import Products from "./products/Products";
+import Favorites from "./favorites/Favorites";
+import ProductPreview from "./productPreview/ProductPreview";
 
 const App = () => (
     <BrowserRouter>
+        <Header/>
         <Switch>
-            <Route exact path='/' component={Home}/>
-            <Route path='/product/:id' component={ProductPreview}/>
+            <Route exact path='/' component={Products}/>
             <Route path='/favorites' component={Favorites}/>
+            <Route path='/products/:id' component={ProductPreview}/>
         </Switch>
     </BrowserRouter>
 );

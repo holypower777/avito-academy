@@ -2,9 +2,7 @@ import * as uiActions from '../actions/uiActions';
 
 const initUi = {
     fetchOneProductPending: false,
-    fetchProductsPending: false,
-    filterProducts: false,
-    sortProducts: false
+    fetchProductsPending: false
 };
 
 const uiReducer = (state = initUi, {type, payload}) => {

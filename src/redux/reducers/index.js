@@ -1,11 +1,11 @@
 import {combineReducers} from "redux";
 
-import favoritesReducer from "./favoritesReducer";
 import productsReducer from "./productsReducer";
+import filtersReducer from "./filtersReducer";
 import uiReducer from "./uiReducer";
 
 export default combineReducers({
-    favorites: favoritesReducer,
     products: productsReducer,
+    filters: filtersReducer,
     ui: uiReducer
 });

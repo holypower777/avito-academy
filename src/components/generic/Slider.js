@@ -7,14 +7,14 @@ const Slider = ({children}) => {
 
     const slides = children.map((slide, i) =>
         current !== i
-            ? <li className="slide" onClick={() => setCurrent(i)}>{slide}</li>
-            : <li className="slide active-slide">{slide}</li>
+            ? <li key={i} className="slide" onClick={() => setCurrent(i)}>{slide}</li>
+            : <li key={i} className="slide active-slide">{slide}</li>
     );
 
     const dots = children.map((slide, i) =>
         current !== i
-            ? <li className="slide-dot" onClick={() => setCurrent(i)}><span/></li>
-            : <li className="slide-dot active-dot"><span/></li>
+            ? <li key={i} className="slide-dot" onClick={() => setCurrent(i)}><span/></li>
+            : <li key={i} className="slide-dot active-dot"><span/></li>
     );
 
     return (

@@ -13,6 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 500;
 }
 
 .side-btn:hover {
@@ -36,8 +37,8 @@
     transition: right .2s ease-in-out;
     display: grid;
     grid-template:
-            "side-header"
-            "side-main" calc(100% - 65px);
+            "side-header" 65px
+            "side-main";
     z-index: 999;
 }
 
