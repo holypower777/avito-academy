@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 
 import {fetchOneProduct} from "../../redux/actions/productsActions";
@@ -23,6 +24,17 @@ const ProductPreview = (props) => {
             {pending ? <Spinner/> : <ProductInfo address={address} title={title} price={price} imagesList={imagesList}/>}
         </main>
     );
+};
+
+ProductPreview.propTypes = {
+    product: PropTypes.shape({
+        address: PropTypes.object,
+        pictures: PropTypes.array,
+        title: PropTypes.string,
+        price: PropTypes.number
+    }).isRequired,
+    pending: PropTypes.bool.isRequired,
+    fetchOneProduct: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (state) => ({

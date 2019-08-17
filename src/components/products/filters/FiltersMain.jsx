@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 import Select from "react-select";
 import {Link} from "react-router-dom";
@@ -86,6 +87,13 @@ class FiltersMain extends Component {
         );
     }
 }
+
+FiltersMain.propTypes = {
+    updateCategoryFilter: PropTypes.func.isRequired,
+    updateMaxPriceFilter: PropTypes.func.isRequired,
+    updateMinPriceFilter: PropTypes.func.isRequired,
+    updateSortOption: PropTypes.func.isRequired
+};
 
 export default connect(
     null,

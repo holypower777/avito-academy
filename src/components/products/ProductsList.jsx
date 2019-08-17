@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react';
+import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 
 import {fetchProducts} from "../../redux/actions/productsActions";
@@ -16,6 +17,12 @@ const ProductsList = ({fetchProducts, products, pending}) => {
     const productsList = mappedProducts.length ? mappedProducts : 'К сожалению, товаров нет';
 
     return pending ? <Spinner/> : <ul className="products">{productsList}</ul>;
+};
+
+ProductsList.propTypes = {
+    fetchProducts: PropTypes.func.isRequired,
+    products: PropTypes.array.isRequired,
+    pending: PropTypes.bool.isRequired
 };
 
 const mapStateToProps = (state) => ({

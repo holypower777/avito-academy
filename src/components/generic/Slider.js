@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import PropTypes from 'prop-types';
 
 import '../../assets/slider.css';
 
@@ -24,6 +25,10 @@ const Slider = ({children}) => {
             <ul className="slider-dots">{dots}</ul>
         </div>
     );
+};
+
+Slider.propTypes = {
+    children: PropTypes.array.isRequired
 };
 
 export default Slider;

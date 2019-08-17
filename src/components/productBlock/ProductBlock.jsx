@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from "react-router-dom";
 import {connect} from "react-redux";
 import Rating from "react-rating";
@@ -8,6 +9,7 @@ import {addToFavorites, removeFromFavorites} from "../../redux/actions/productsA
 import FavoriteIcon from "../icons/FavoriteIcon";
 import FullStarIcon from "../icons/FullStarIcon";
 import StarIcon from "../icons/StarIcon";
+import Price from "../../lib/Price";
 
 import './productBlock.css';
 
@@ -38,10 +40,26 @@ const ProductBlock = ({product, addToFavorites, removeFromFavorites}) => {
                         style={{marginTop: '2px'}}
                     />
                 </div>
-                <span className="product-price">{price ? price.toLocaleString() : 'Цена не указана'}&#8381;</span>
+                <Price price={price} className="product-price"/>
             </Link>
         </li>
     );
+};
+
+ProductBlock.propTypes = {
+    product: PropTypes.shape({
+        pictures: PropTypes.array,
+        id: PropTypes.string.isRequired,
+        isFavorite: PropTypes.bool.isRequired,
+        price: PropTypes.number,
+        title: PropTypes.string.isRequired,
+        relationships: PropTypes.shape({
+            name: PropTypes.string,
+            rating: PropTypes.number
+        }).isRequired
+    }).isRequired,
+    addToFavorites: PropTypes.func.isRequired,
+    removeFromFavorites: PropTypes.func.isRequired
 };
 
 export default connect(
