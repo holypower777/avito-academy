@@ -1,7 +1,7 @@
 import React from 'react';
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 
-import Header from "./generic/Header";
+import Header from "./generic/header/Header";
 import Products from "./products/Products";
 import Favorites from "./favorites/Favorites";
 import ProductPreview from "./productPreview/ProductPreview";

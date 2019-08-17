@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 
-import '../../assets/slider.css';
+import './slider.css';
 
 const Slider = ({children}) => {
     const [current, setCurrent] = useState(0);

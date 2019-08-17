@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {fetchProducts} from "../../redux/actions/productsActions";
 import {getSortedProducts} from "../../redux/selectors/productsSelector";
 
-import Spinner from "../generic/Spinner";
+import Spinner from "../generic/spinner/Spinner";
 import ProductBlock from "../productBlock/ProductBlock";
 
 const ProductsList = ({fetchProducts, products, pending}) => {

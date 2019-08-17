@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {YMaps, Map, Placemark} from 'react-yandex-maps';
 
-import Slider from "../generic/Slider";
+import Slider from "../generic/slider/Slider";
 import Price from "../../lib/Price";
 
 const ProductInfo = ({address = {lat: 55, lng: 37}, title, price, imagesList}) => {

@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {fetchOneProduct} from "../../redux/actions/productsActions";
 
 import ProductInfo from "./ProductInfo";
-import Spinner from "../generic/Spinner";
+import Spinner from "../generic/spinner/Spinner";
 
 import './productPreview.css';
 

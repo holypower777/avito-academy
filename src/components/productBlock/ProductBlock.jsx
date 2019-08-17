@@ -6,9 +6,9 @@ import Rating from "react-rating";
 
 import {addToFavorites, removeFromFavorites} from "../../redux/actions/productsActions";
 
-import FavoriteIcon from "../icons/FavoriteIcon";
-import FullStarIcon from "../icons/FullStarIcon";
-import StarIcon from "../icons/StarIcon";
+import FavoriteIcon from "../../assets/icons/FavoriteIcon";
+import FullStarIcon from "../../assets/icons/FullStarIcon";
+import StarIcon from "../../assets/icons/StarIcon";
 import Price from "../../lib/Price";
 
 import './productBlock.css';

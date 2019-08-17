@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-import FavoriteIcon from "../icons/FavoriteIcon";
-import LogoIcon from "../icons/LogoIcon";
+import FavoriteIcon from "../../../assets/icons/FavoriteIcon";
+import LogoIcon from "../../../assets/icons/LogoIcon";
 
 const Header = () => (
     <header id="header">

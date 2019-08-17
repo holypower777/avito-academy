@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 import FiltersMain from "./FiltersMain";
-import FilterIcon from "../../icons/FilterIcon";
-import CrossIcon from "../../icons/CrossIcon";
+import FilterIcon from "../../../assets/icons/FilterIcon";
+import CrossIcon from "../../../assets/icons/CrossIcon";
 
 import './filters.css';
 
