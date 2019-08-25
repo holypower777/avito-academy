@@ -8,7 +8,7 @@ import {getSortedProducts} from "../../redux/selectors/productsSelector";
 import Spinner from "../generic/spinner/Spinner";
 import ProductBlock from "../productBlock/ProductBlock";
 
-const ProductsList = ({fetchProducts, products, pending}) => {
+export const ProductsList = ({fetchProducts, products, pending}) => {
     useEffect(() => {
         !products.length && fetchProducts();
     }, [products, fetchProducts]);

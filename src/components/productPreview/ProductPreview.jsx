@@ -9,7 +9,7 @@ import Spinner from "../generic/spinner/Spinner";
 
 import './productPreview.css';
 
-const ProductPreview = (props) => {
+export const ProductPreview = (props) => {
     const id = props.match.params.id;
     const {product: {address, pictures, title, price}, pending, fetchOneProduct} = props;
 

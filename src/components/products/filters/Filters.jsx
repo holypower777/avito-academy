@@ -27,4 +27,5 @@ const Filters = () => {
         </section>
     )
 };
+
 export default Filters;

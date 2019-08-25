@@ -13,7 +13,7 @@ import Price from "../../lib/Price";
 
 import './productBlock.css';
 
-const ProductBlock = ({product, addToFavorites, removeFromFavorites}) => {
+export const ProductBlock = ({product, addToFavorites, removeFromFavorites}) => {
     const {pictures, id, isFavorite, price, title, relationships: {name, rating}} = product;
 
     const handleClick = (e) => {
@@ -60,6 +60,11 @@ ProductBlock.propTypes = {
     }).isRequired,
     addToFavorites: PropTypes.func.isRequired,
     removeFromFavorites: PropTypes.func.isRequired
+};
+
+ProductBlock.defaultProps = {
+    addToFavorites: () => {},
+    removeFromFavorites: () => {}
 };
 
 export default connect(
